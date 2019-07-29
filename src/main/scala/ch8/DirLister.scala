@@ -17,7 +17,7 @@ class DirLister(path: String, f: String => Boolean) {
 
 object DirLister {
 
-  def main(args: Array[String]) {
+   def main(args: Array[String]) {
     println("test")
   }
 
