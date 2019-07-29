@@ -1,6 +1,6 @@
 import org.scalatest._
 
-class HtmlUtilsSpec extends FlatSpec with ShouldMatchers {
+class HtmlUtilsSpec extends FlatSpec with Matchers {
 
   "The Html Utils object" should "remove single elements" in {
     HtmlUtils.removeMarkup("<br/>") should equal("")
@@ -17,13 +17,11 @@ class HtmlUtilsSpec extends FlatSpec with ShouldMatchers {
 
   it should "support multiline tags" in {
     val src = """
-<html
->
+<html>
 <body>
 Cheers
 <div
-class="header"></div
->
+class="header"></div>
 </head></html>
     """
 

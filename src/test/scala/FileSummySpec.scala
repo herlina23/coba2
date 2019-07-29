@@ -1,8 +1,12 @@
-import java.io.{PrintWriter, File}
-import org.scalatest._
+import java.io.{File, PrintWriter}
+
+import scala.annotation.tailrec
+import org.scalatest.{FlatSpec, Matchers}
+
+import scala.util.Random
 
 
-class FileSummySpec extends FlatSpec with ShouldMatchers {
+class FileSummySpec extends FlatSpec with Matchers {
 
   import FileSummy._
 
@@ -29,17 +33,12 @@ class FileSummySpec extends FlatSpec with ShouldMatchers {
     val contents = """
 
 
-The fire is slowly dying,
-And my dear, we're still good-by-ing.
-But, as long as you love me so,
-Let It Snow! Let It Snow! Let It snow
+let it go....!!! let it gooo!!
 
-{}
+yoyooyoyo
+yayyaya
+naninu naninu
 
-Oh, it doesn't show signs of stopping,
-And I've brought some corn for popping,
-Since the lights are turned way down low,
-Let It Snow! Let It Snow! Let It Snow!
     """
 
     val file = newFile(contents)
@@ -48,8 +47,24 @@ Let It Snow! Let It Snow! Let It Snow!
   }
 
 
+
+  def randomString(length: Int) = {
+    val r = new scala.util.Random
+    val sb = new StringBuilder
+    for (i <- 1 to length) {
+      sb.append(r.nextPrintableChar)
+    }
+    sb.toString
+  }
+
+  //issue detected
   private def newFile(content: String): File = {
-    val testFile = new File(s"summytest_${SafeStringUtils.randomLetters(20)}.txt")
+//    val testFile = new File(s"summytest_${SafeStringUtils.randomLetters(20)}.txt")
+
+val testFile = new File(s"summytest_${randomString(10)}.txt")
+
+    //val testFile = new File(s"summytest_.txt")
+
     val writer = new PrintWriter(testFile)
     writer.write(content)
     writer.close()
