@@ -15,10 +15,10 @@ class DirLister(path: String, f: String => Boolean) {
 
 }
 
-object DirLister {
-
-   def main(args: Array[String]) {
-    println("test")
-  }
-
-}
+//object DirLister {
+//
+//   def main(args: Array[String]) {
+//    println("test")
+//  }
+//
+//}

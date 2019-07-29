@@ -1,5 +1,5 @@
 import java.io.{PrintWriter, File}
-import org.scalatest.
+import org.scalatest._
 
 
 class FileSummySpec extends FlatSpec with ShouldMatchers {

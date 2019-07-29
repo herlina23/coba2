@@ -35,7 +35,7 @@ class="header"></div
 <html>
 <head>
 <script type="text/javascript">
-  console.log("Yo");
+  console.log("YOLO");
 </script>
 </head></html>
     """
