@@ -29,15 +29,18 @@ class FileSummySpec extends FlatSpec with Matchers {
     formatted should include (file.getName)
   }
 
+//  let it go....!!! let it gooo!!
+//  yoyooyoyo
+//  yayyaya
+//  naninu naninu
+
+
+
   it should "recognize paragraphs, ignoring non-word ones" in {
     val contents = """
 
 
-let it go....!!! let it gooo!!
-
-yoyooyoyo
-yayyaya
-naninu naninu
+    abang abang arab ganteng cuuy!! hadeh ehhheh
 
     """
 
@@ -48,20 +51,23 @@ naninu naninu
 
 
 
-  def randomString(length: Int) = {
-    val r = new scala.util.Random
-    val sb = new StringBuilder
-    for (i <- 1 to length) {
-      sb.append(r.nextPrintableChar)
-    }
-    sb.toString
-  }
+//  def randomString(length: Int) = {
+//    val r = new scala.util.Random
+//    val sb = new StringBuilder
+//    for (i <- 1 to length) {
+//      sb.append(r.nextPrintableChar)
+//    }
+//    sb.toString
+//  }
 
   //issue detected
   private def newFile(content: String): File = {
-//    val testFile = new File(s"summytest_${SafeStringUtils.randomLetters(20)}.txt")
+  //  val testFile = new File(s"summytest_${SafeStringUtils.randomLetters(20)}.txt")
+  val testFile = new File(s"summytest_${Random.alphanumeric take 20 mkString}.txt")
 
-val testFile = new File(s"summytest_${randomString(10)}.txt")
+//val testFile = new File(s"summytest_${randomString(10)}.txt")
+
+//    Random.alphanumeric take 10 mkString
 
     //val testFile = new File(s"summytest_.txt")
 
