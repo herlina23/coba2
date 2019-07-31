@@ -27,7 +27,7 @@ object Task7 {
     xml
   }
   val xml = githubRss("slick", "slick", "master")
-  def xmlToEntryList(xml: String) = xml.split("</?entry>").filterNot(_.isEmpty).tail
+  def xmlToEntryList(xml: String) = xml.split("</?entry>").filterNot(_.isEmpty).tail //yg kosong dibuang
   val entries = xmlToEntryList(xml); println(s"Got ${entries.size} entries")
 
   def child(xml: String, name: String): Option[String] = {
@@ -50,7 +50,9 @@ object Task7 {
   val firstReport = report(entries(0))
   def getGithubReport(user: String, repo: String, branch: String): String = {
     val xml = githubRss(user, repo, branch)
+
     val entries = xmlToEntryList(xml).toList
+
     val formattedEntries = entries flatMap report
     val title = s"Github commit activity for $repo:$branch"
     title :: formattedEntries mkString ("\n" + "=" * 80 + "\n")
