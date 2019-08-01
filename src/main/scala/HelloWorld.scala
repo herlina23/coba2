@@ -109,7 +109,7 @@ object HelloWorld {
       }
     )
 
-    println("Chapter 4 no 3")
+    println("Chapter 4 no 1")
     println(lingkaran(7))
     println(lingkaran2(7))
 
