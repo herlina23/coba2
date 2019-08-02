@@ -17,4 +17,7 @@ class DirLister(path: String, f: String => Boolean) {
 
 //object a {
 //  var d: DirLister = new DirLister( E:\\dddd , true)'
+// def main(args: Array[String]) {
+//    println()
+//  }
 //}
